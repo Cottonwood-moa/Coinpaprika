@@ -41,7 +41,7 @@ export default function Year() {
           ]}
           options={{
             theme: {
-              mode: "dark",
+              mode: "light",
             },
             chart: {
               height: 500,
@@ -75,7 +75,7 @@ export default function Year() {
             colors: ["#0be881"],
             tooltip: {
               y: {
-                formatter: (value) => `$ ${value.toFixed(2)}`,
+                formatter: (value) => `$ ${value.toFixed(4)}`,
               },
             },
           }}

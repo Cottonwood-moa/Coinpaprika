@@ -21,7 +21,14 @@ const Header = styled.header`
 `;
 const Title = styled.h1`
   font-size: 48px;
-  color: ${(props) => props.theme.accentColor};
+  background: linear-gradient(
+    to right,
+    ${(props) => props.theme.accentColor},
+    #0fbff3
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 const Loader = styled.span`
   text-align: center;
@@ -33,6 +40,7 @@ const Overview = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   border-radius: 10px;
+  color: ${(props) => props.theme.textColor};
 `;
 const OverviewItem = styled.div`
   display: flex;
@@ -59,7 +67,7 @@ const Tab = styled.span<ITab>`
   margin: 1rem;
   text-align: center;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 400;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 7px 0px;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,10 +10,8 @@ const Container = styled.div`
   padding: 10rem;
 `;
 const Header = styled.header`
-  @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-  font-family: "Pacifico", cursive;
+  font-family: "Nanum Brush Script", cursive;
   position: fixed;
-  background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.accentColor};
   width: 100%;
   height: 4rem;
@@ -23,11 +22,6 @@ const Header = styled.header`
   border-bottom: 2px solid #999;
   padding: 40px;
   z-index: 10;
-  img {
-    width: 3rem;
-    height: 3rem;
-    margin-right: 1rem;
-  }
 `;
 const Title = styled.h1`
   font-size: 48px;
@@ -46,6 +40,17 @@ const Profile = styled.div`
   border: 10px solid #7f8fa6;
   box-sizing: content-box;
 `;
+const Logo = styled.h1`
+  font-size: 48px;
+  background: linear-gradient(
+    to right,
+    ${(props) => props.theme.accentColor},
+    #0fbff3
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`;
 const Info = styled.div`
   text-align: center;
   font-size: 24px;
@@ -56,12 +61,13 @@ const Info = styled.div`
 export default function About() {
   return (
     <>
+      <Helmet>
+        <title>About</title>
+      </Helmet>
       <Header>
-        <img
-          src="https://media0.giphy.com/media/zXk5wajcwNspI23pvV/giphy.gif?cid=ecf05e47pq8pdc3lblhfqab4q1t14yc277gd2zr7b8d6c463&rid=giphy.gif&ct=s"
-          alt="logo"
-        />
-        <Link to={"/"}>Coinpaprika API</Link>
+        <Link to={"/"}>
+          <Logo>Coinpaprika API</Logo>
+        </Link>
       </Header>
       <Container>
         <Profile></Profile>

@@ -32,7 +32,7 @@ export default function CandleStick() {
           type="candlestick"
           options={{
             theme: {
-              mode: "dark",
+              mode: "light",
             },
             chart: {
               height: 500,
@@ -64,10 +64,10 @@ export default function CandleStick() {
                   return {
                     x: article.time_close,
                     y: [
-                      article.open.toFixed(2),
-                      article.high.toFixed(2),
-                      article.low.toFixed(2),
-                      article.close.toFixed(2),
+                      article.open.toFixed(4),
+                      article.high.toFixed(4),
+                      article.low.toFixed(4),
+                      article.close.toFixed(4),
                     ],
                   };
                 }) ?? [],

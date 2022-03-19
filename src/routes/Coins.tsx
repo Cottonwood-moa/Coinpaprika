@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { Link, useNavigate, Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
@@ -17,8 +18,9 @@ const CoinsContainer = styled.div`
   }
 `;
 const Header = styled.header`
+  font-family: "Nanum Brush Script", cursive;
   position: fixed;
-  background-color: ${(props) => props.theme.bgColor};
+  background-color: ${(props) => props.theme.textColor};
   color: ${(props) => props.theme.accentColor};
   width: 100%;
   height: 4rem;
@@ -26,7 +28,7 @@ const Header = styled.header`
   font-weight: bold;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #999;
+  border-bottom: 1px solid #999;
   padding: 40px;
   z-index: 10;
   img {
@@ -47,6 +49,17 @@ const Header = styled.header`
     background-size: 100% 100%;
     cursor: pointer;
   }
+`;
+const Logo = styled.h1`
+  font-size: 48px;
+  background: linear-gradient(
+    to right,
+    ${(props) => props.theme.accentColor},
+    #0fbff3
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 const CoinsList = styled.ul``;
 const Coin = styled.li`
@@ -97,9 +110,19 @@ function Coins() {
 
   return (
     <>
+      <Helmet>
+        <title>CoinpaprikaAPI</title>
+      </Helmet>
       <Header>
-        <Link to={"/btc-bitcoin/year"}>Coinpaprika API</Link>
-        <div onClick={() => navigate("/about")}></div>
+        <Link to={"/btc-bitcoin/year"}>
+          <Logo>Coinpaprika API</Logo>
+        </Link>
+        <div
+          onClick={() =>
+            (window.location.href =
+              "https://github.com/Cottonwood-moa/Coinpaprika")
+          }
+        ></div>
       </Header>
       {isLoading ? (
         <Loader>Loading</Loader>

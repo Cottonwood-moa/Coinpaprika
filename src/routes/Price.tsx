@@ -40,7 +40,7 @@ export default function Price() {
           ]}
           options={{
             theme: {
-              mode: "dark",
+              mode: "light",
             },
             chart: {
               type: "bar",
@@ -63,6 +63,7 @@ export default function Price() {
               offsetY: -20,
               style: {
                 fontSize: "12px",
+                colors: ["#333"],
               },
             },
             xaxis: {
