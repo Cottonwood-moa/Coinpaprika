@@ -12,9 +12,9 @@ const CoinsContainer = styled.div`
   height: 100vh;
   overflow-y: scroll;
   z-index: 5;
-  /* @media only screen and (max-width: 1150px) {
+  @media only screen and (max-width: 1150px) {
     display: none;
-  } */
+  }
 `;
 const Header = styled.header`
   @import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
