@@ -51,7 +51,7 @@ table {
   border-spacing: 0;
 }
 body{
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Nanum Brush Script", cursive;
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor};
   overflow-x: hidden;

@@ -17,7 +17,6 @@ const CoinsContainer = styled.div`
   }
 `;
 const Header = styled.header`
-  font-family: "Nanum Brush Script", cursive;
   position: fixed;
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.accentColor};
