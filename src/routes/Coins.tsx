@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { useQuery } from "react-query";
-import { Link, Outlet } from "react-router-dom";
+import { Link, useNavigate, Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { fetchCoins } from "../api";
 
@@ -17,6 +18,8 @@ const CoinsContainer = styled.div`
   }
 `;
 const Header = styled.header`
+  @import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
+  font-family: "Nanum Brush Script", cursive;
   position: fixed;
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.accentColor};
@@ -33,6 +36,19 @@ const Header = styled.header`
     width: 3rem;
     height: 3rem;
     margin-right: 1rem;
+  }
+  div {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    border-radius: 50%;
+    right: 0;
+    margin-right: 2rem;
+    background: url(https://avatars.githubusercontent.com/u/79053495?v=4) center
+      center no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
   }
 `;
 const CoinsList = styled.ul``;
@@ -72,16 +88,21 @@ interface ICoin {
   type: string;
 }
 function Coins() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/") {
+      navigate("/btc-bitcoin/year", { replace: true });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", fetchCoins);
 
   return (
     <>
       <Header>
-        <img
-          src="https://media4.giphy.com/media/jQWAZxNu6hW698itBs/giphy.gif?cid=ecf05e47nf1gm4w6o02p40vczhcisznpjo85a2fctablsd60&rid=giphy.gif&ct=s"
-          alt="logo"
-        />
-        Coinpaprika API
+        <Link to={"/btc-bitcoin/year"}>Coinpaprika API</Link>
+        <div onClick={() => navigate("/about")}></div>
       </Header>
       <Container>
         <CoinsContainer>
@@ -94,7 +115,7 @@ function Coins() {
                   <Coin key={coin.id}>
                     <Link
                       to={{
-                        pathname: `/${coin.id}/chart`,
+                        pathname: `/${coin.id}/year`,
                       }}
                       state={{
                         name: coin.name,

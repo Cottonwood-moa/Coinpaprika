@@ -49,15 +49,14 @@ const Description = styled.p`
   margin: 20px 0px;
 `;
 const Tabs = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 25px 0px;
-  gap: 10px;
+  display: flex;
 `;
 interface ITab {
   isActive: boolean;
 }
 const Tab = styled.span<ITab>`
+  flex: 1;
+  margin: 1rem;
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
@@ -82,7 +81,8 @@ function Coin() {
   // const [priceInfo, setPriceIngo] = useState<PriceData>();
   // const [loading, setLoading] = useState<boolean>(true);
   const priceMatch = useMatch("/:coinId/price");
-  const chartMatch = useMatch("/:coinId/chart");
+  const chartMatch = useMatch("/:coinId/weeks");
+  const yearMatch = useMatch("/:coinId/year");
   const { isLoading: infoLoading, data: infoData } = useQuery<InfoData>(
     ["info", coinId],
     () => fetchCoinInfo(coinId)
@@ -107,7 +107,6 @@ function Coin() {
   //     setLoading(false);
   //   })();
   // }, []);
-  // 40381.87918890226
   const loading = infoLoading || priceLoading;
   return (
     <Container>
@@ -155,8 +154,11 @@ function Coin() {
             </OverviewItem>
           </Overview>
           <Tabs>
+            <Tab isActive={yearMatch !== null}>
+              <Link to={`/${coinId}/year`}>last year</Link>
+            </Tab>
             <Tab isActive={chartMatch !== null}>
-              <Link to={`/${coinId}/chart`}>last 2 weeks</Link>
+              <Link to={`/${coinId}/weeks`}>last 4 weeks</Link>
             </Tab>
             <Tab isActive={priceMatch !== null}>
               <Link to={`/${coinId}/price`}>rate of change</Link>
