@@ -2,8 +2,7 @@ import Router from "./Router";
 import { createGlobalStyle } from "styled-components";
 import { ReactQueryDevtools } from "react-query/devtools";
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
+
  html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -51,6 +50,8 @@ table {
   border-spacing: 0;
 }
 body{
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
   font-family: "Nanum Brush Script", cursive;
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor};
