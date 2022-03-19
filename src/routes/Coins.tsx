@@ -103,10 +103,10 @@ function Coins() {
         <Link to={"/btc-bitcoin/year"}>Coinpaprika API</Link>
         <div onClick={() => navigate("/about")}></div>
       </Header>
-      <CoinsContainer>
-        {isLoading ? (
-          <Loader>Loading</Loader>
-        ) : (
+      {isLoading ? (
+        <Loader>Loading</Loader>
+      ) : (
+        <CoinsContainer>
           <CoinsList>
             {data?.slice(0, 99).map((coin) => {
               return (
@@ -129,8 +129,8 @@ function Coins() {
               );
             })}
           </CoinsList>
-        )}
-      </CoinsContainer>
+        </CoinsContainer>
+      )}
       <Outlet />
     </>
   );
