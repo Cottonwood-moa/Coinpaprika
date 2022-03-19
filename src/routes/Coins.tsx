@@ -4,7 +4,6 @@ import { Link, useNavigate, Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { fetchCoins } from "../api";
 
-const Container = styled.div``;
 const CoinsContainer = styled.div`
   position: fixed;
   padding: 7rem 20px;
@@ -104,37 +103,35 @@ function Coins() {
         <Link to={"/btc-bitcoin/year"}>Coinpaprika API</Link>
         <div onClick={() => navigate("/about")}></div>
       </Header>
-      <Container>
-        <CoinsContainer>
-          {isLoading ? (
-            <Loader>Loading</Loader>
-          ) : (
-            <CoinsList>
-              {data?.slice(0, 99).map((coin) => {
-                return (
-                  <Coin key={coin.id}>
-                    <Link
-                      to={{
-                        pathname: `/${coin.id}/year`,
-                      }}
-                      state={{
-                        name: coin.name,
-                      }}
-                    >
-                      <Img
-                        src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
-                        alt=""
-                      />
-                      {coin.name} &rarr;
-                    </Link>
-                  </Coin>
-                );
-              })}
-            </CoinsList>
-          )}
-        </CoinsContainer>
-        <Outlet />
-      </Container>
+      <CoinsContainer>
+        {isLoading ? (
+          <Loader>Loading</Loader>
+        ) : (
+          <CoinsList>
+            {data?.slice(0, 99).map((coin) => {
+              return (
+                <Coin key={coin.id}>
+                  <Link
+                    to={{
+                      pathname: `/${coin.id}/year`,
+                    }}
+                    state={{
+                      name: coin.name,
+                    }}
+                  >
+                    <Img
+                      src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                      alt=""
+                    />
+                    {coin.name} &rarr;
+                  </Link>
+                </Coin>
+              );
+            })}
+          </CoinsList>
+        )}
+      </CoinsContainer>
+      <Outlet />
     </>
   );
 }
