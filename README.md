@@ -26,8 +26,8 @@ React.js + Typescript + Coinpaprika API
 ## 💡 Specs
 
 - React.js
+- Typescript
 - react-router-dom
-- Typesciprt
 - React-apexcharts
 - Recoil
 
