@@ -58,7 +58,7 @@ const Logo = styled.h1`
   background: linear-gradient(
     to right,
     ${(props) => props.theme.accentColor},
-    #0fbff3
+    #1bd6bc
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -76,6 +76,7 @@ const Coin = styled.li<{ isDark: boolean }>`
     props.isDark ? `2px solid ${props.theme.accentColor}` : `none`};
   box-shadow: ${(props) =>
     !props.isDark ? `5px 5px 5px 0px rgba(153, 153, 153, 0.5)` : `none`};
+  box-sizing: border-box;
   a {
     display: flex;
     align-items: center;

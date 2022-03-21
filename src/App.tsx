@@ -60,6 +60,7 @@ body{
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor};
   overflow-x: hidden;
+  transition: 0.2s;
 }
 *{
   box-sizing: border-box;

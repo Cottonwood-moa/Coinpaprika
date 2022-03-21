@@ -24,7 +24,7 @@ const Title = styled.h1`
   background: linear-gradient(
     to right,
     ${(props) => props.theme.accentColor},
-    #0fbff3
+    #1bd6bc
   );
   background-clip: text;
   -webkit-background-clip: text;
