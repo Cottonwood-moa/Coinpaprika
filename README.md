@@ -29,6 +29,7 @@ React.js + Typescript + Coinpaprika API
 - react-router-dom
 - Typesciprt
 - React-apexcharts
+- Recoil
 
 ### 구성
 
