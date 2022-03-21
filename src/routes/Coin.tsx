@@ -40,7 +40,7 @@ const Overview = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   border-radius: 10px;
-  color: ${(props) => props.theme.textColor};
+  color: #f5f6fa;
 `;
 const OverviewItem = styled.div`
   display: flex;
@@ -72,8 +72,7 @@ const Tab = styled.span<ITab>`
   background-color: rgba(0, 0, 0, 0.5);
   padding: 7px 0px;
   border-radius: 10px;
-  color: ${(props) =>
-    props.isActive ? props.theme.accentColor : props.theme.textColor};
+  color: ${(props) => (props.isActive ? props.theme.accentColor : "#f5f6fa")};
   a {
     display: block;
   }

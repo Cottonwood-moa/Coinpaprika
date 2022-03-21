@@ -3,9 +3,12 @@ import { useOutletContext } from "react-router-dom";
 import { fetchPriceInfo } from "../api";
 import ApexChart from "react-apexcharts";
 import { PriceData } from "./ICoin";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "../atoms";
 
 export default function Price() {
   const coinId = useOutletContext<string>();
+  const isDark = useRecoilValue(isDarkAtom);
   // IOhlcv는 14개가 받아져 온다.
   // 그래서 <IOhlcv[]>로 적어줌?
   const { isLoading, data } = useQuery<PriceData>(
@@ -40,7 +43,7 @@ export default function Price() {
           ]}
           options={{
             theme: {
-              mode: "light",
+              mode: isDark ? "dark" : "light",
             },
             chart: {
               type: "bar",
@@ -63,7 +66,7 @@ export default function Price() {
               offsetY: -20,
               style: {
                 fontSize: "12px",
-                colors: ["#333"],
+                colors: isDark ? ["white"] : ["#333"],
               },
             },
             xaxis: {

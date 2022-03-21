@@ -1,7 +1,10 @@
 import Router from "./Router";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { ReactQueryDevtools } from "react-query/devtools";
 import "./fonts.css";
+import { lightTheme, darkTheme } from "./theme";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "./atoms";
 const GlobalStyle = createGlobalStyle`
 
  html, body, div, span, applet, object, iframe,
@@ -54,8 +57,8 @@ table {
 body{
   font-family: 'Source Sans Pro', sans-serif;
   /* font-family: 'Source Sans Pro', sans-serif; */
-  background-color: ${(props) => props.theme.textColor};
-  color: ${(props) => props.theme.bgColor};
+  background-color: ${(props) => props.theme.bgColor};
+  color: ${(props) => props.theme.textColor};
   overflow-x: hidden;
 }
 *{
@@ -87,11 +90,14 @@ a{
 }
 `;
 function App() {
+  const isDark = useRecoilValue(isDarkAtom);
   return (
     <>
-      <GlobalStyle />
-      <Router />
-      <ReactQueryDevtools initialIsOpen={true} />
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <Router />
+        <ReactQueryDevtools initialIsOpen={true} />
+      </ThemeProvider>
     </>
   );
 }

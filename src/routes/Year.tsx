@@ -2,6 +2,8 @@ import { useQuery } from "react-query";
 import { useOutletContext } from "react-router-dom";
 import { fetchCoinHistory } from "../api";
 import ApexChart from "react-apexcharts";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "../atoms";
 interface IOhlcv {
   time_open: string;
   time_close: string;
@@ -13,6 +15,7 @@ interface IOhlcv {
   market_cap: number;
 }
 export default function Year() {
+  const isDark = useRecoilValue(isDarkAtom);
   const coinId = useOutletContext<string>();
   // IOhlcv는 14개가 받아져 온다.
   // 그래서 <IOhlcv[]>로 적어줌?
@@ -41,7 +44,7 @@ export default function Year() {
           ]}
           options={{
             theme: {
-              mode: "light",
+              mode: isDark ? "dark" : "light",
             },
             chart: {
               height: 500,
