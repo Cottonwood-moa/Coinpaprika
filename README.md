@@ -21,6 +21,7 @@ React.js + Typescript + Coinpaprika API
 - React-query를 적극 활용하여 Global state와 서버 비용을 줄이고 실시간으로 변화하는 데이터를 인터페이스에 반영합니다.
 - Apexcharts를 활용하여 데이터 시각화 + 다양한 차트를 만들었습니다.
 - styled-components + Typescript로 theme 확장성을 높였습니다.
+- 비동기 데이터가 아닌 Global state는 recoil로 관리하였습니다.
 
 ## 💡 Specs
 
