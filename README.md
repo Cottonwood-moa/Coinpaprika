@@ -12,8 +12,9 @@ React.js + Typescript + Coinpaprika API
 - [React-query](https://react-query.tanstack.com/)
 - [React-apexcharts](https://apexcharts.com/docs/react-charts/)
 - [Typescript](https://www.typescriptlang.org/)
+- [Recoil](https://recoiljs.org/ko/)
 - [Styled-components](https://styled-components.com/)
-  ㅤ
+- [Coinpaprika](https://api.coinpaprika.com/)
 
 ## 🎯 Goals
 
@@ -26,9 +27,10 @@ React.js + Typescript + Coinpaprika API
 ## 💡 Specs
 
 - React.js
+- Typescript
 - react-router-dom
-- Typesciprt
 - React-apexcharts
+- Recoil
 
 ### 구성
 
