@@ -22,7 +22,6 @@ export async function fetchCoinHistory(
 ) {
   const endDate = Math.floor(Date.now() / 1000);
   const startDate = endDate - 60 * 60 * 24 * 7 * term;
-  console.log(startDate, endDate);
   const response = await fetch(
     `${BASE_URL}/coins/${coinId}/ohlcv/historical?start=${startDate}&end=${endDate}`
   );
