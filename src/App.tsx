@@ -3,8 +3,9 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { ReactQueryDevtools } from "react-query/devtools";
 import "./fonts.css";
 import { lightTheme, darkTheme } from "./theme";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { isDarkAtom } from "./atoms";
+import { useEffect } from "react";
 const GlobalStyle = createGlobalStyle`
 
  html, body, div, span, applet, object, iframe,
@@ -91,7 +92,14 @@ a{
 }
 `;
 function App() {
-  const isDark = useRecoilValue(isDarkAtom);
+  const [isDark, setIsDark] = useRecoilState(isDarkAtom);
+  useEffect(() => {
+    const isDark = JSON.parse(localStorage.getItem("isDark") as string);
+    setIsDark(isDark);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("isDark", JSON.stringify(isDark));
+  }, [isDark]);
   return (
     <>
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
