@@ -34,7 +34,7 @@ const Header = styled.header`
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.accentColor};
   width: 100%;
-  min-width: 600px;
+  min-width: 800px;
   height: 4rem;
   font-size: 36px;
   font-weight: bold;
