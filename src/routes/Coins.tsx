@@ -155,7 +155,8 @@ function Coins() {
                     }}
                   >
                     <Img
-                      src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                      // src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                      src={`https://cryptocurrencyliveprices.com/img/${coin.id}.png`}
                       alt=""
                     />
                     {coin.name} &rarr;
