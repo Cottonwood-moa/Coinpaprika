@@ -233,33 +233,29 @@ function Coins() {
                   }
                 })
               : data?.slice(0, 199).map((coin) => {
-                  if (coin.name.toLowerCase().includes(inputValue)) {
-                    return (
-                      <Coin key={coin.id} isDark={isDark}>
-                        <Link
-                          to={{
-                            pathname: `/${coin.id}/year`,
+                  return (
+                    <Coin key={coin.id} isDark={isDark}>
+                      <Link
+                        to={{
+                          pathname: `/${coin.id}/year`,
+                        }}
+                        state={{
+                          name: coin.name,
+                        }}
+                      >
+                        <Img
+                          src={`https://cryptocurrencyliveprices.com/img/${coin.id}.png`}
+                          onError={({ currentTarget }) => {
+                            currentTarget.onerror = null;
+                            currentTarget.src =
+                              "https://cdn-icons-png.flaticon.com/128/1429/1429978.png";
                           }}
-                          state={{
-                            name: coin.name,
-                          }}
-                        >
-                          <Img
-                            src={`https://cryptocurrencyliveprices.com/img/${coin.id}.png`}
-                            onError={({ currentTarget }) => {
-                              currentTarget.onerror = null;
-                              currentTarget.src =
-                                "https://cdn-icons-png.flaticon.com/128/1429/1429978.png";
-                            }}
-                            alt=""
-                          />
-                          {coin.name} &rarr;
-                        </Link>
-                      </Coin>
-                    );
-                  } else {
-                    return null;
-                  }
+                          alt=""
+                        />
+                        {coin.name} &rarr;
+                      </Link>
+                    </Coin>
+                  );
                 })}
           </CoinsList>
         </CoinsContainer>
