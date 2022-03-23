@@ -3,7 +3,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { ReactQueryDevtools } from "react-query/devtools";
 import "./fonts.css";
 import { lightTheme, darkTheme } from "./theme";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { isDarkAtom } from "./atoms";
 import { useEffect } from "react";
 const GlobalStyle = createGlobalStyle`
@@ -96,6 +96,7 @@ function App() {
   useEffect(() => {
     const isDark = JSON.parse(localStorage.getItem("isDark") as string);
     setIsDark(isDark);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     localStorage.setItem("isDark", JSON.stringify(isDark));
