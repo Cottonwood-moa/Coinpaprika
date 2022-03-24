@@ -3,7 +3,7 @@
 ㅤ  
 [Go to Website](https://adoring-bell-1ceb47.netlify.app/)
 
-React.js + Typescript + Coinpaprika API
+React.js + Typescript + Recoil + Coinpaprika API
 
 ## 📖 Docs
 
