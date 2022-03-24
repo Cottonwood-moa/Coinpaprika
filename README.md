@@ -1,5 +1,13 @@
-# Coinpaprika API
+# Coinpaprika API  
 
+Apex Chart  
+![apex](https://user-images.githubusercontent.com/79053495/159847334-310af3a3-915f-4994-917c-3ea61f6102c9.gif)  
+  
+Theme  
+![theme](https://user-images.githubusercontent.com/79053495/159847340-41349516-2db4-4e72-bdea-d2c80e109a46.gif)  
+  
+ Search  
+![search](https://user-images.githubusercontent.com/79053495/159847341-ef3346a3-9bba-4f10-a6c2-1d2ebeae4aa6.gif)  
 ㅤ  
 [Go to Website](https://adoring-bell-1ceb47.netlify.app/)
 
