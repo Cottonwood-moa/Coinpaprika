@@ -5,6 +5,7 @@ import Weeks from "./routes/Weeks";
 import Price from "./routes/Price";
 import Year from "./routes/Year";
 import About from "./routes/About";
+import NotFound from "./routes/NotFound";
 function Router() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function Router() {
           </Route>
         </Route>
         <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
