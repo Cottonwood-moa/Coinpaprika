@@ -165,7 +165,7 @@ function Coin() {
               <Link to={`/${coinId}/year`}>last year</Link>
             </Tab>
             <Tab isActive={chartMatch !== null}>
-              <Link to={`/${coinId}/weeks`}>last 4 weeks</Link>
+              <Link to={`/${coinId}/weeks`}>last month</Link>
             </Tab>
             <Tab isActive={priceMatch !== null}>
               <Link to={`/${coinId}/price`}>rate of change</Link>

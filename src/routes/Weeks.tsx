@@ -26,6 +26,7 @@ export default function CandleStick() {
       refetchInterval: 10000,
     }
   );
+  console.log(data);
   return (
     <div>
       {isLoading ? (
@@ -41,12 +42,15 @@ export default function CandleStick() {
               height: 500,
               width: 500,
               toolbar: {
-                show: true,
+                show: false,
               },
               background: "transparent",
             },
             xaxis: {
               type: "datetime",
+              labels: {
+                show: false,
+              },
             },
             yaxis: {
               show: false,

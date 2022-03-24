@@ -50,7 +50,7 @@ export default function Year() {
               height: 500,
               width: 500,
               toolbar: {
-                show: false,
+                show: true,
               },
               background: "transparent",
             },
