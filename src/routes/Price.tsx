@@ -5,7 +5,6 @@ import ApexChart from "react-apexcharts";
 import { PriceData } from "./ICoin";
 import { useRecoilValue } from "recoil";
 import { isDarkAtom } from "../atoms";
-
 export default function Price() {
   const coinId = useOutletContext<string>();
   const isDark = useRecoilValue(isDarkAtom);
@@ -18,11 +17,10 @@ export default function Price() {
       refetchInterval: 5000,
     }
   );
-
   return (
     <div>
       {isLoading ? (
-        "Loading chart..."
+        <></>
       ) : (
         <ApexChart
           type="bar"

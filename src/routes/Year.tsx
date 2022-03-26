@@ -30,7 +30,7 @@ export default function Year() {
   return (
     <div>
       {isLoading ? (
-        "Loading chart..."
+        <></>
       ) : (
         <ApexChart
           type="line"

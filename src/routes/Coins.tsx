@@ -12,8 +12,10 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import styled from "styled-components";
 import { fetchCoins } from "../api";
 import { isDarkAtom } from "../atoms";
+import CoinImg from "../Components/CoinImg";
+import Loading from "../Components/Loading";
 
-const CoinsContainer = styled.div`
+const CoinsContainer = styled.div<{ isLoading: boolean }>`
   position: fixed;
   padding: 7rem 20px;
   width: 30rem;
@@ -21,6 +23,9 @@ const CoinsContainer = styled.div`
   height: 100vh;
   overflow-y: scroll;
   z-index: 5;
+  display: ${(props) => (props.isLoading ? "flex" : "block")};
+  justify-content: ${(props) => (props.isLoading ? "center" : "none")};
+  align-items: ${(props) => (props.isLoading ? "center" : "none")};
   ::-webkit-scrollbar-track {
     margin-top: 4rem;
   }
@@ -190,9 +195,11 @@ function Coins() {
         ></GitLink>
       </Header>
       {isLoading ? (
-        <Loader>Loading</Loader>
+        <CoinsContainer isLoading={isLoading}>
+          <Loading width={`5rem`} height={`5rem`} border={`10px`} />
+        </CoinsContainer>
       ) : (
-        <CoinsContainer>
+        <CoinsContainer isLoading={isLoading}>
           <CoinSearch
             type="text"
             onChange={onChange}
@@ -215,15 +222,7 @@ function Coins() {
                             name: coin.name,
                           }}
                         >
-                          <Img
-                            src={`https://cryptocurrencyliveprices.com/img/${coin.id}.png`}
-                            onError={({ currentTarget }) => {
-                              currentTarget.onerror = null;
-                              currentTarget.src =
-                                "https://cdn-icons-png.flaticon.com/128/1429/1429978.png";
-                            }}
-                            alt=""
-                          />
+                          <CoinImg coinId={coin.id} />
                           {coin.name} &rarr;
                         </Link>
                       </Coin>

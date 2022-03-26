@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { Outlet, useLocation, useParams, useMatch } from "react-router-dom";
 import styled from "styled-components";
 import { fetchCoinInfo, fetchPriceInfo } from "../api";
+import Loading from "../Components/Loading";
 import { RouterState, InfoData, PriceData } from "./ICoin";
 const Container = styled.div`
   position: absolute;
   padding: 5rem 5rem 5rem 35rem;
   width: 100%;
+  height: 100%;
   min-width: 800px;
   @media only screen and (max-width: 1150px) {
     padding: 5rem;
@@ -29,10 +31,6 @@ const Title = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-`;
-const Loader = styled.span`
-  text-align: center;
-  display: block;
 `;
 const Overview = styled.div`
   display: flex;
@@ -76,6 +74,13 @@ const Tab = styled.span<ITab>`
   a {
     display: block;
   }
+`;
+const LoadingWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 function Coin() {
   // react-router-dom v6 이상이신 분들은
@@ -123,7 +128,9 @@ function Coin() {
         </Title>
       </Header>
       {loading ? (
-        <Loader>Loading...</Loader>
+        <LoadingWrap>
+          <Loading width="10rem" height="10rem" border="20px" />
+        </LoadingWrap>
       ) : (
         <>
           <Overview>

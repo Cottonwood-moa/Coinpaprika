@@ -14,6 +14,7 @@ interface IOhlcv {
   volume: number;
   market_cap: number;
 }
+
 export default function CandleStick() {
   const coinId = useOutletContext<string>();
   const isDark = useRecoilValue(isDarkAtom);
@@ -26,11 +27,10 @@ export default function CandleStick() {
       refetchInterval: 10000,
     }
   );
-  console.log(data);
   return (
-    <div>
+    <>
       {isLoading ? (
-        "Loading chart..."
+        <></>
       ) : (
         <ApexChart
           type="candlestick"
@@ -82,6 +82,6 @@ export default function CandleStick() {
           ]}
         />
       )}
-    </div>
+    </>
   );
 }
