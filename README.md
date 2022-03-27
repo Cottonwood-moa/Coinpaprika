@@ -10,8 +10,11 @@ Apex Chart
 Theme  
 ![theme](https://user-images.githubusercontent.com/79053495/159847340-41349516-2db4-4e72-bdea-d2c80e109a46.gif)  
   
- Search  
+Search  
 ![search](https://user-images.githubusercontent.com/79053495/159847341-ef3346a3-9bba-4f10-a6c2-1d2ebeae4aa6.gif)  
+  
+404 NOT FOUND  
+![20220327151239](https://user-images.githubusercontent.com/79053495/160269139-5a408a4a-6f91-45a4-8121-e62dd0219915.png)  
   
 ## 📖 Docs
 
