@@ -1,6 +1,6 @@
 # 🤑 Coinpaprika API  
   
-[Go to Website](https://adoring-bell-1ceb47.netlify.app/)  
+[Go to Website](https://coinpaprika-api.netlify.app/)  
   
 React.js + Typescript + Recoil + Coinpaprika API  
   
