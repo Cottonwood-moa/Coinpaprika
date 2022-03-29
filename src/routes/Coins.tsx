@@ -155,7 +155,7 @@ function Coins() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const onChange = (event: React.FormEvent<HTMLInputElement>) => {
-    event.currentTarget.value.length > 1 &&
+    event.currentTarget.value.length > 2 &&
       setInputValue(event.currentTarget.value);
     event.currentTarget.value.length === 0 &&
       setInputValue(event.currentTarget.value);
@@ -204,6 +204,7 @@ function Coins() {
           />
           <SearchInfo>💰Inital data are rank 1 ~ 200.</SearchInfo>
           <SearchInfo>💰Search results come from 10000 coin data.</SearchInfo>
+          <SearchInfo>💰The search term must be at least 3 characters long.</SearchInfo>
           <CoinsList>
             {inputValue
               ? data?.slice(0, 9999).map((coin) => {
