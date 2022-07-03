@@ -1,7 +1,5 @@
 # 🤑 Coinpaprika API  
   
-[Go to Website](https://coinpaprika-api.netlify.app/)  
-  
 React.js + Typescript + Recoil + Coinpaprika API  
   
 Apex Chart  
